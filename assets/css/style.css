@@ -11,7 +11,34 @@
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;}
+
+/* ✅ Fondo cambiado */
+html, body{
+  margin:0;
+  padding:0;
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
+
+  /* Fondo STALKER con tu imagen */
+  background:#000 url("assets/img/fondo-tdn.png") center center/cover fixed no-repeat;
+}
+
+/* ✅ Niebla STALKER dinámicamente */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:url("https://i.imgur.com/7y1qSgU.png") center/1800px repeat;
+  opacity:.22; /* Ajusta claridad de la niebla */
+  mix-blend-mode:lighten;
+  animation:fogmove 45s linear infinite;
+}
+
+@keyframes fogmove{
+  0%{transform:translate(0,0);}
+  100%{transform:translate(-250px,-150px);}
+}
 
 .container{max-width:1100px;margin:0 auto;padding:24px}
 
