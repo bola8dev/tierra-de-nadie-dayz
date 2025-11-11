@@ -50,7 +50,7 @@ body::after{
 /* HERO – 3 COLUMNAS */
 .hero{
   display:grid;
-  grid-template-columns: 500px 1fr 420px; /* antes era 340px y luego 380px */
+  grid-template-columns: 520px 1fr 420px; /* antes era 340px y luego 380px */
   align-items:center;
   gap:50px; /* un poco más de aire */
   justify-content:space-between; /* ← ESTA ES LA CLAVE */
