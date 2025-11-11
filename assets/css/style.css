@@ -23,7 +23,7 @@ html,body{
   color:var(--text);
   background:#000;
   background-image:
-     url("/tierra-de-nadie-dayz/assets/img/fondo-tdn.png"),
+     url("tierra-de-nadie-dayz/assets/img/fondo-tdn.png"),
      radial-gradient(circle at center, #111 0%, #000 100%);
   background-size:cover;
   background-position:center;
