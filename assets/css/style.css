@@ -1,182 +1,284 @@
-:root{
-  --bg:#0b0f0c;
-  --panel:#121815;
-  --muted:#96a39a;
-  --text:#e6f5e9;
-  --accent:#9aff5a;
-  --accent-amber:#ffcc66;
-  --link:#b7ffd1;
-  --danger:#ff6b6b;
-  --shadow:rgba(0,0,0,.55);
+:root {
+  --bg: #0b0f0c;
+  --panel: #121815;
+  --muted: #96a39a;
+  --text: #e6f5e9;
+  --accent: #9aff5a;
+  --accent-amber: #ffcc66;
+  --link: #b7ffd1;
+  --danger: #ff6b6b;
+  --shadow: rgba(0,0,0,0.55);
 }
 
-*{box-sizing:border-box}
-
-html,body{
-  margin:0;
-  padding:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
-  min-height:100%;
-  overflow-x:hidden;
-}
-
-/* === FONDO PRINCIPAL === */
-body {
-  background: url("/tierra-de-nadie-dayz/assets/img/fondo-tdn.png") center/cover no-repeat fixed;
-  color: var(--text);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+/* fondo con imagen */
+html, body {
   margin: 0;
   padding: 0;
+  background: url("assets/img/fondo-tdn.png") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* === NIEBLA STALKER === */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background: url("https://files.catbox.moe/5w7x4y.png") center/200% repeat;
-  opacity: 0.22;
-  mix-blend-mode: screen;
-  animation: fogmove 60s linear infinite;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-@keyframes fogmove {
-  0% { transform: translate(0,0); }
-  100% { transform: translate(-400px,-200px); }
-}
-
-/* Hace que el contenido esté POR ENCIMA de la niebla */
-body > * {
-  position: relative;
-  z-index: 5;
-}
-
-/* --- NAVBAR --- */
-.nav{
-  position:sticky;top:0;z-index:10;
-  display:flex;justify-content:space-between;align-items:center;
-  gap:12px;padding:12px 20px;
-  background:rgba(0,0,0,.45);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid #1b241f;
-}
-
-.nav .logo{
-  width:40px;height:40px;object-fit:contain;
-  filter:drop-shadow(0 4px 12px var(--shadow));
-  border-radius:8px;
-}
-
-.nav__left{display:flex;align-items:center}
-.nav__links a{
-  margin:0 8px;
-  text-decoration:none;
-  color:var(--link);
-  font-weight:600;
-}
-.nav__links .btn{margin-left:8px}
-
-/* --- HERO --- */
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh; /* HERO A PANTALLA COMPLETA */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: linear-gradient(0deg, transparent, rgba(0,0,0,.35)), var(--bg);
+  border-bottom: 1px solid #1b241f;
+  backdrop-filter: saturate(1.2) blur(6px);
+}
+
+.nav .logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px var(--shadow));
+  border-radius: 8px;
+}
+.nav .brand {
+  font-family: Rajdhani, Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-left: 8px;
+}
+.nav__left {
+  display: flex;
+  align-items: center;
+}
+.nav__links a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: var(--link);
+  font-weight: 600;
+}
+.nav__links .btn {
+  margin-left: 8px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  /* este margen lo puedes aumentar para “bajar” el hero y darle más espacio arriba */
   padding-top: 80px;
-  padding-bottom: 80px;
-  z-index: 5;
-}
-.hero__text h1{font-family:Rajdhani,Inter,sans-serif;font-size:48px;margin:0 0 8px}
-.hero__text p{color:var(--muted);line-height:1.5}
-
-.hero__card{
-  background:rgba(0,0,0,.55);
-  border:1px solid #1b241f;
-  border-radius:16px;
-  padding:16px;
-  box-shadow:0 10px 30px var(--shadow);
 }
 
-.hero__motto{font-weight:700;color:var(--accent-amber);margin-top:0}
-.hero__features{padding-left:18px;margin:6px 0 0;color:var(--muted)}
-
-.connect{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px;align-items:center}
-.connect__ip{
-  display:flex;align-items:center;gap:10px;
-  background:#0f1411;border:1px dashed #2a3a31;border-radius:12px;padding:10px 12px
+.hero__text h1 {
+  font-family: Rajdhani, Inter, sans-serif;
+  font-size: 48px;
+  margin: 0 0 8px;
+}
+.hero__text p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+.hero__card {
+  background: rgba(0,0,0,.55);
+  border: 1px solid #1b241f;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+.hero__motto {
+  font-weight: 700;
+  color: var(--accent-amber);
+  margin-top: 0;
+}
+.hero__features {
+  padding-left: 18px;
+  margin: 6px 0 0;
+  color: var(--muted);
 }
 
-code#server-addr{
-  font-family:ui-monospace,Menlo,Consolas,monospace;
-  padding:2px 6px;background:#0b120f;border-radius:8px;border:1px solid #1b241f
+.connect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+.connect__ip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #0f1411;
+  border: 1px dashed #2a3a31;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+code#server-addr {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  padding: 2px 6px;
+  background: #0b120f;
+  border-radius: 8px;
+  border: 1px solid #1b241f;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #213126;
+  background: #152018;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .15s transform, .15s opacity;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn--primary {
+  background: linear-gradient(180deg, rgba(154,255,90,.18), rgba(154,255,90,.05));
+}
+.btn--discord {
+  border-color: #2a3a31;
+}
+.btn--ghost {
+  background: transparent;
+  border-color: #26362c;
+  color: var(--accent-amber);
 }
 
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:10px 14px;border-radius:12px;border:1px solid #213126;
-  background:#152018;color:var(--text);
-  text-decoration:none;font-weight:700;cursor:pointer;transition:.15s transform,.15s opacity
-}
-.btn:hover{transform:translateY(-1px)}
-.btn--primary{background:rgba(154,255,90,.15)}
-.btn--ghost{background:transparent;border-color:#26362c;color:var(--accent-amber)}
-
-/* --- SECCIONES --- */
-/* Abrir widgets hacia los lados y bajarlos más */
+/* --- WIDGETS --- */
 .widgets {
-  max-width: 1300px;
-  width: 100%;
-  margin: 160px auto 0 auto; /* Bajarlos y centrarlos */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px; /* Más espacio entre noticias y tienda */
-  padding: 0 40px; /* Espacio lateral */
+  gap: 20px;
+  margin-top: 100px;  /* aquí aumentamos el margen para bajarlos */
 }
 .widget {
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,.55);
+  border: 1px solid #1b241f;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 24px var(--shadow);
+  /* para “abrirse hacia los lados” podemos añadir */
+  transform: perspective(500px) rotateY(0deg);
+}
+.widget:nth-child(1) {
+  transform: translateX(-30px); /* mueve el primer widget ligeramente a la izquierda */
+}
+.widget:nth-child(2) {
+  transform: translateX(30px); /* mueve el segundo widget ligeramente a la derecha */
 }
 
-.widget,.card,.product,.member{
-  background:rgba(0,0,0,.55);
-  border:1px solid #1b241f;border-radius:16px;padding:16px;box-shadow:0 10px 24px var(--shadow)
+/* Resto de estilos (cards, shop-grid, etc) sin cambiar… */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.card {
+  background: rgba(0,0,0,.55);
+  border: 1px solid #1b241f;
+  border-radius: 16px;
+  padding: 16px;
+}
+.card h3 {
+  margin-top: 0;
+}
+.card time {
+  font-size: .9rem;
+  color: var(--muted);
 }
 
-.footer{
-  margin-top:60px;padding:24px;
-  text-align:center;color:var(--muted);
-  background:rgba(0,0,0,.45);
-  border-top:1px solid #1b241f;
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
+.product {
+  background: rgba(0,0,0,.55);
+  border: 1b solid #1b241f;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* RESPONSIVE */
-@media (max-width:880px){
-  .hero{grid-template-columns:1fr}
-  .widgets,.cards,.shop-grid,.gallery,.staff{grid-template-columns:1fr}
+.note {
+  margin-top: 18px;
+  color: var(--muted);
 }
-/* Empujar las secciones inferiores hacia abajo para dejar ver el logo */
-.widgets,
-.cards,
-.shop-grid,
-.gallery,
-.staff,
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+.gallery__item {
+  aspect-ratio: 16/9;
+  border: 1px dashed #2a3a31;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f1411;
+}
+.ph {
+  opacity: .6;
+}
+
+.staff {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.member {
+  background: rgba(0,0,0,.55);
+  border: 1px solid #1b241f;
+  border-radius: 16px;
+  padding: 16px;
+}
+
 .footer {
-  position: relative;
-  z-index: 3; /* que estén encima de la niebla */
+  margin-top: 60px;
+  padding: 12px;
+  border-top: 1px solid #1b241f;
+  color: var(--muted);
+  text-align: center;
 }
 
-/* Secciones principales debajo del hero */
-.widgets {
-  margin-top: 240px; /* Ajusta este valor para subir/bajar */
-}
-
-/* Si en tu versión estas secciones no se llaman .widgets, usa esto como seguro */
-section, .widget, .card {
-  z-index: 3;
+/* Media queries */
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+  .widgets {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+  .staff {
+    grid-template-columns: 1fr;
+  }
 }
