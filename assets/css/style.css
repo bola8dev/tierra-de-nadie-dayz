@@ -24,7 +24,7 @@ html,body{
 
 /* === FONDO PRINCIPAL === */
 body {
-  background: url("assets/img/fondo-tdn.png") center/cover no-repeat fixed, var(--bg);
+  background: url("/tierra-de-nadie-dayz/assets/img/fondo-tdn.png") center/cover no-repeat fixed;
 }
 
 /* === NIEBLA STALKER === */
