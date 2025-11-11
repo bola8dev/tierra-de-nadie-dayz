@@ -51,11 +51,15 @@ body::after{
 .hero{
   display:grid;
   grid-template-columns: 480px 1fr 340px;
-  align-items:start; /* ← SUBE EL CONTENIDO */
+  align-items:center;
   gap:40px;
-  padding:60px min(5vw,60px);
-  min-height:calc(100vh - 52px);
+
+  /* ESTE ES EL AJUSTE CLAVE */
+  min-height: calc(100vh - 120px); /* ocupa la pantalla restando nav+footer */
+  padding-top: 70px; /* baja el contenido */
+  padding-bottom: 70px; /* deja aire antes del footer */
 }
+
 
 /* IZQUIERDA */
 .hero-card{
@@ -75,8 +79,7 @@ body::after{
 .hero-center{
   text-align:center;
   position:relative;
-  z-index:10;
-  transform: translateY(-130px); /* SUBIMOS TEXTO & IP */
+  transform: translateY(-40px); /* antes era -130 → ahora queda perfecto */
 }
 
 .hero-logo{
@@ -143,10 +146,9 @@ body::after{
 /* FOOTER */
 .footer{
   text-align:center;
-  padding:16px;
+  padding:20px;
   border-top:2px solid rgba(255,59,0,.7);
   background:rgba(255,59,0,.12);
-  margin-top:30px;
 }
 
 /* RESPONSIVE */
