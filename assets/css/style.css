@@ -81,7 +81,17 @@ body > * {
 .nav__links .btn{margin-left:8px}
 
 /* --- HERO --- */
-.hero{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:24px}
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* HERO A PANTALLA COMPLETA */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  z-index: 5;
+}
 .hero__text h1{font-family:Rajdhani,Inter,sans-serif;font-size:48px;margin:0 0 8px}
 .hero__text p{color:var(--muted);line-height:1.5}
 
