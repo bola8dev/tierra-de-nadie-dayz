@@ -23,7 +23,7 @@ body::after{
   background:radial-gradient(circle at 50% 30%, rgba(0,0,0,.55), transparent 70%);
 }
 
-/* NAV (compacta) */
+/* NAV */
 .nav{
   height:52px;
   display:flex;
@@ -53,13 +53,12 @@ body::after{
   grid-template-columns: 480px 1fr 340px;
   align-items:center;
   gap:40px;
-  min-height: calc(100vh - 120px); /* ocupa la pantalla restando nav+footer */
-  padding-top: 70px; /* baja el contenido */
-  padding-bottom: 70px; /* deja aire antes del footer */
+  min-height: calc(100vh - 120px);
+  padding-top: 70px;
+  padding-bottom: 70px;
   max-width: 1400px;
   margin:0 auto;
 }
-
 
 /* IZQUIERDA */
 .hero-card{
@@ -75,26 +74,50 @@ body::after{
 .hero-card ul{padding-left:18px;line-height:1.55;margin:0;}
 
 /* CENTRO */
-/* CENTRO */
 .hero-center{
   text-align:center;
   position:relative;
-  transform: translateY(-40px); /* antes era -130 → ahora queda perfecto */
+  transform: translateY(-40px);
 }
 
 .hero-logo{
   width:100%;
-  max-width:420px; /* ↓ antes era 480px */
+  max-width:420px;
   filter: drop-shadow(0 0 30px black);
-  margin-bottom:6px; /* ↓ más compacto */
-  margin-top:-20px;  /* ↓ subimos el logo */
+  margin-bottom:6px;
+  margin-top:-20px;
 }
 
+/* TITULO CON CONTORNO Y BRILLO AGRESIVO */
 .hero-center h1{
   font-family:Rajdhani;
   font-size:56px;
   margin:0 0 8px;
+  color:#ffffff;
+  text-shadow:
+    -2px -2px 0 var(--red),
+     2px -2px 0 var(--red),
+    -2px  2px 0 var(--red),
+     2px  2px 0 var(--red),
+     0 0 12px var(--red),
+     0 0 24px var(--red),
+     0 0 40px rgba(255,59,0,.8);
+  transition:0.25s;
 }
+
+/* HOVER DEL TÍTULO */
+.hero-center h1:hover{
+  text-shadow:
+    -2px -2px 0 #ff6a33,
+     2px -2px 0 #ff6a33,
+    -2px  2px 0 #ff6a33,
+     2px  2px 0 #ff6a33,
+     0 0 20px #ff6a33,
+     0 0 38px #ff3b00,
+     0 0 65px rgba(255,59,0,1);
+  transform:scale(1.03);
+}
+
 .hero-center p{
   color:var(--muted);
   max-width:520px;
@@ -121,18 +144,34 @@ body::after{
   cursor:pointer;
 }
 
-/* DERECHA */
+/* DERECHA (WIDGETS) */
 .widgets{
   display:flex;
   flex-direction:column;
   gap:16px;
 }
+
+/* WIDGETS COLOR NAV + GLOW AGRESIVO */
 .widget{
-  background:var(--panel);
-  border:1px solid #1b241f;
+  background:rgba(255,59,0,.12);
+  border:1px solid rgba(255,59,0,.35);
   border-radius:14px;
   padding:16px;
+  backdrop-filter: blur(6px);
+  box-shadow:0 0 12px rgba(255,59,0,.35);
+  transition:0.25s;
 }
+
+/* HOVER AGRESIVO */
+.widget:hover{
+  box-shadow:
+    0 0 22px rgba(255,59,0,.55),
+    0 0 45px rgba(255,59,0,.85),
+    0 0 70px rgba(255,59,0,1);
+  border-color:rgba(255,59,0,1);
+  transform:translateY(-3px) scale(1.03);
+}
+
 .btn-ghost{
   display:inline-block;
   margin-top:6px;
