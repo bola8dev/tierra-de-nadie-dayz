@@ -53,11 +53,11 @@ body::after{
   grid-template-columns: 480px 1fr 340px;
   align-items:center;
   gap:40px;
-
-  /* ESTE ES EL AJUSTE CLAVE */
   min-height: calc(100vh - 120px); /* ocupa la pantalla restando nav+footer */
   padding-top: 70px; /* baja el contenido */
   padding-bottom: 70px; /* deja aire antes del footer */
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 
