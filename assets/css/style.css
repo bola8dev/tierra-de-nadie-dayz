@@ -50,7 +50,7 @@ body::after{
 /* HERO – 3 COLUMNAS */
 .hero{
   display:grid;
-  grid-template-columns: 480px 1fr 340px;
+  grid-template-columns: 480px 1fr 380px; /* ANTES: 340px → para abrir los widgets un poco */
   align-items:center;
   gap:40px;
   min-height: calc(100vh - 120px);
@@ -60,18 +60,31 @@ body::after{
   margin:0 auto;
 }
 
-/* IZQUIERDA */
+/* IZQUIERDA - NUEVO ESTILO A JUEGO CON WIDGETS */
 .hero-card{
-  background:var(--panel);
-  border:1px solid #1b241f;
+  background:rgba(255,59,0,.12);
+  border:1px solid rgba(255,59,0,.35);
   border-radius:16px;
-  padding:24px;
+  padding:26px;
   max-width:480px;
-  box-shadow:0 0 30px rgba(0,0,0,.6);
-  line-height:1.45;
+  box-shadow:0 0 18px rgba(255,59,0,.35);
+  line-height:1.55;
+  backdrop-filter: blur(6px);
 }
-.hero-card h3{color:var(--amber);margin-top:0;}
-.hero-card ul{padding-left:18px;line-height:1.55;margin:0;}
+.hero-card h3{
+  color:#fff;
+  font-family:"Rajdhani", sans-serif;
+  font-size:26px;
+  margin-top:0;
+  text-shadow:
+    0 0 8px var(--red),
+    0 0 18px rgba(255,59,0,.8);
+}
+.hero-card ul{
+  padding-left:18px;
+  line-height:1.6;
+  margin:0;
+}
 
 /* CENTRO */
 .hero-center{
@@ -100,30 +113,28 @@ body::after{
     -2px  2px 0 var(--red),
      2px  2px 0 var(--red),
      0 0 12px var(--red),
-     0 0 24px var(--red),
-     0 0 40px rgba(255,59,0,.8);
+     0 0 26px var(--red),
+     0 0 55px rgba(255,59,0,1);
   transition:0.25s;
 }
 
 /* HOVER DEL TÍTULO */
 .hero-center h1:hover{
-  text-shadow:
-    -2px -2px 0 #ff6a33,
-     2px -2px 0 #ff6a33,
-    -2px  2px 0 #ff6a33,
-     2px  2px 0 #ff6a33,
-     0 0 20px #ff6a33,
-     0 0 38px #ff3b00,
-     0 0 65px rgba(255,59,0,1);
   transform:scale(1.03);
 }
 
+/* TEXTO SUBTITULAR - BLANCO RESPLANDECIENTE */
 .hero-center p{
-  color:var(--muted);
+  color:#ffffff;
+  text-shadow:
+    0 0 8px rgba(255,255,255,.7),
+    0 0 18px rgba(255,255,255,.6);
   max-width:520px;
   margin:10px auto 14px;
   line-height:1.5;
 }
+
+/* IP */
 .hero-connect{
   display:flex;
   justify-content:center;
@@ -151,7 +162,7 @@ body::after{
   gap:16px;
 }
 
-/* WIDGETS COLOR NAV + GLOW AGRESIVO */
+/* WIDGETS - GLOW AGRESIVO */
 .widget{
   background:rgba(255,59,0,.12);
   border:1px solid rgba(255,59,0,.35);
@@ -161,8 +172,6 @@ body::after{
   box-shadow:0 0 12px rgba(255,59,0,.35);
   transition:0.25s;
 }
-
-/* HOVER AGRESIVO */
 .widget:hover{
   box-shadow:
     0 0 22px rgba(255,59,0,.55),
