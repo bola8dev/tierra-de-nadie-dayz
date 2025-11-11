@@ -1,10 +1,10 @@
 :root{
-  --bg:#0b0f0c;          /* fondo muy oscuro con tinte verde */
-  --panel:#121815;       /* panel oscuro */
-  --muted:#96a39a;       /* texto secundario */
-  --text:#e6f5e9;        /* texto principal verdoso */
-  --accent:#9aff5a;      /* verde radiactivo */
-  --accent-amber:#ffcc66;/* ámbar */
+  --bg:#0b0f0c;
+  --panel:#121815;
+  --muted:#96a39a;
+  --text:#e6f5e9;
+  --accent:#9aff5a;
+  --accent-amber:#ffcc66;
   --link:#b7ffd1;
   --danger:#ff6b6b;
   --shadow:rgba(0,0,0,.55);
@@ -12,32 +12,13 @@
 
 *{box-sizing:border-box}
 
-/* ✅ Fondo cambiado */
-html, body{
-  margin:0;
-  padding:0;
-  color:var(--text);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
-
-  /* Fondo STALKER con tu imagen */
-  background:#000 url("assets/img/fondo-tdn.png") center center/cover fixed no-repeat;
-}
-
-/* ✅ Niebla STALKER dinámicamente */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:url("https://i.imgur.com/7y1qSgU.png") center/1800px repeat;
-  opacity:.22; /* Ajusta claridad de la niebla */
-  mix-blend-mode:lighten;
-  animation:fogmove 45s linear infinite;
-}
-
-@keyframes fogmove{
-  0%{transform:translate(0,0);}
-  100%{transform:translate(-250px,-150px);}
+/* ✅ Fondo con imagen */
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
+  background: #000 url("../img/fondo-tdn.png") center center / cover fixed no-repeat;
 }
 
 .container{max-width:1100px;margin:0 auto;padding:24px}
@@ -105,4 +86,37 @@ code#server-addr{font-family:ui-monospace,Menlo,Consolas,monospace;padding:2px 6
   .shop-grid{grid-template-columns:1fr}
   .gallery{grid-template-columns:1fr 1fr}
   .staff{grid-template-columns:1fr}
+}
+
+/* ✅ Neblina STALKER */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: url("https://i.imgur.com/7y1qSgU.png") center/cover repeat;
+  opacity: 0.25;
+  mix-blend-mode: lighten;
+  animation: fogmove 35s linear infinite;
+}
+
+@keyframes fogmove {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-200px, -120px); }
+}
+
+/* ✅ Brillo suave en el logo principal */
+.logo-glow {
+  filter: drop-shadow(0 0 18px rgba(255, 70, 20, 0.45));
+  animation: logoPulse 3.5s ease-in-out infinite;
+  transition: 0.3s ease;
+}
+.logo-glow:hover {
+  filter: drop-shadow(0 0 24px rgba(255, 90, 30, 0.75));
+  transform: scale(1.03);
+}
+@keyframes logoPulse {
+  0% { filter: drop-shadow(0 0 14px rgba(255, 60, 10, 0.40)); }
+  50% { filter: drop-shadow(0 0 26px rgba(255, 90, 20, 0.70)); }
+  100% { filter: drop-shadow(0 0 14px rgba(255, 60, 10, 0.40)); }
 }
