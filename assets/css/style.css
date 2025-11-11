@@ -165,11 +165,3 @@ body::after{
   .hero-logo{max-width:300px;margin-bottom:6px;}
   .hero-center{margin-top:0;}
 }
-main.container{
-  padding-bottom:120px; /* deja espacio para footer */
-}
-
-.footer{
-  position:relative;
-  z-index:10;
-}
