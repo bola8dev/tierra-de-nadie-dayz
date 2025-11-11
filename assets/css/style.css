@@ -73,8 +73,11 @@ body::after{
 /* CENTRO */
 .hero-center{
   text-align:center;
-  margin-top:-40px; /* ← SUBIMOS EL TEXTO */
+  transform: translateY(-90px); /* Subimos todo el bloque */
+  position: relative;
+  z-index: 5;
 }
+
 .hero-logo{
   width:100%;
   max-width:420px; /* ← MÁS PEQUEÑO */
@@ -157,4 +160,12 @@ body::after{
   }
   .hero-logo{max-width:300px;margin-bottom:6px;}
   .hero-center{margin-top:0;}
+}
+main.container{
+  padding-bottom:120px; /* deja espacio para footer */
+}
+
+.footer{
+  position:relative;
+  z-index:10;
 }
