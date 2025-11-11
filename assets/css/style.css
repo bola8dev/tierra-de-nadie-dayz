@@ -138,6 +138,10 @@ code#server-addr{
   gap: 60px; /* Más espacio entre noticias y tienda */
   padding: 0 40px; /* Espacio lateral */
 }
+.widget {
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+}
 
 .widget,.card,.product,.member{
   background:rgba(0,0,0,.55);
