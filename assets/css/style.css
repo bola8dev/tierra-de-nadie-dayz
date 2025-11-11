@@ -124,3 +124,54 @@ html,body{
   background:rgba(255,70,0,.15);
   color:var(--muted);
 }
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1400px){
+  .hero-logo{ max-width:460px; }
+}
+
+@media (max-width: 1200px){
+  .hero-logo{ max-width:400px; }
+  .hero h1{ font-size:48px; }
+  .hero p{ font-size:16px; }
+}
+
+/* Cuando la pantalla es más estrecha, quitamos los paneles flotantes */
+@media (max-width: 1000px){
+  .hero{
+    height:auto;
+    padding:140px 20px 80px;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+  }
+
+  /* El texto de la izquierda baja debajo del título */
+  .hero-features{
+    position:static;
+    transform:none;
+    margin:40px auto 0;
+    width:90%;
+    max-width:480px;
+  }
+
+  /* Noticias + Tienda pasan debajo en columna */
+  .widgets{
+    position:static;
+    transform:none;
+    margin:40px auto 0;
+    width:90%;
+    max-width:480px;
+  }
+
+  .widget{
+    width:100%;
+  }
+}
+
+@media (max-width: 600px){
+  .hero-logo{ max-width:300px; }
+  .hero h1{ font-size:36px; }
+  .connect{ flex-direction:column; }
+  .nav{ padding:10px; }
+}
