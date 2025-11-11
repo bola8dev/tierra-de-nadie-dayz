@@ -50,15 +50,19 @@ body::after{
 /* HERO – 3 COLUMNAS */
 .hero{
   display:grid;
-  grid-template-columns: 480px 1fr 380px; /* ANTES: 340px → para abrir los widgets un poco */
+  grid-template-columns: 480px 1fr 420px; /* antes era 340px y luego 380px */
   align-items:center;
-  gap:40px;
+  gap:50px; /* un poco más de aire */
+  justify-content:space-between; /* ← ESTA ES LA CLAVE */
   min-height: calc(100vh - 120px);
   padding-top: 70px;
   padding-bottom: 70px;
-  max-width: 1400px;
+  max-width: 1500px; /* abrimos un poco el area total */
   margin:0 auto;
+  padding-left:20px;
+  padding-right:20px;
 }
+
 
 /* IZQUIERDA - NUEVO ESTILO A JUEGO CON WIDGETS */
 .hero-card{
