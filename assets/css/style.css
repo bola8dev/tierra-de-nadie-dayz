@@ -31,13 +31,17 @@ html,body{
 
 /* ===== HERO ===== */
 .hero{
-  height:100vh;
-  display:flex;
-  justify-content:center;
+  display:grid;
+  grid-template-columns: 1fr auto 0.8fr;
   align-items:center;
-  text-align:center;
-  flex-direction:column;
-  padding-top:60px;
+  justify-content:center;
+  gap:40px;
+  width:100%;
+  max-width:1600px;
+  margin:0 auto;
+  padding-top:90px;
+  position:relative;
+  min-height:100vh;
 }
 
 .hero h1{
@@ -74,45 +78,40 @@ html,body{
 }
 .btn:hover{transform:translateY(-2px)}
 
-/* LOGO GRANDE CENTRADO */
+/* LOGO */
 .hero-logo{
-  max-width:520px;
+  max-width:550px;
   width:100%;
-  margin:40px auto 0;
-  filter:drop-shadow(0 0 30px black);
+  display:block;
+  margin:auto;
+  filter: drop-shadow(0 0 25px rgba(0,0,0,.7));
 }
 
-/* ===== BLOQUE IZQUIERDA ===== */
+/* PANEL IZQUIERDO (CARACTERÍSTICAS) */
 .hero-features{
-  position:absolute;
-  left:60px;
-  top:50%;
-  transform:translateY(-50%);
-  width:360px;
-  background:rgba(0,0,0,.6);
-  padding:20px;
+  background:rgba(0,0,0,.55);
+  border:1px solid #1b241f;
   border-radius:16px;
-  border:1px solid rgba(255,255,255,.1);
+  padding:20px;
+  max-width:380px;
+  box-shadow:0 10px 30px var(--shadow);
 }
 
-/* ===== NOTICIAS + TIENDA DERECHA ===== */
+/* NOTICIAS + TIENDA A LA DERECHA */
 .widgets{
-  position:absolute;
-  right:60px;
-  top:50%;
-  transform:translateY(-50%);
   display:flex;
   flex-direction:column;
   gap:20px;
-  width:330px;
+  max-width:330px;
 }
 
+/* Tarjetas */
 .widget{
   background:rgba(0,0,0,.55);
-  padding:18px;
+  border:1px solid #1b241f;
   border-radius:14px;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 10px 25px var(--shadow);
+  padding:18px;
+  box-shadow:0 10px 18px var(--shadow);
 }
 
 /* ===== PIE DE PÁGINA ===== */
