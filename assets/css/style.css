@@ -37,20 +37,21 @@ body::after{
 /* HERO 3 COLUMNAS EN PC */
 .hero{
   display:grid;
-  grid-template-columns: 380px 1fr 340px;
+  grid-template-columns: 480px 1fr 340px; /* ← MÁS ANCHO */
   align-items:center;
   gap:40px;
   padding:60px min(5vw,60px);
   min-height:calc(100vh - 52px);
 }
 
-/* IZQUIERDA */
 .hero-card{
   background:var(--panel);
   border:1px solid #1b241f;
   border-radius:16px;
-  padding:18px;
+  padding:24px; /* un pelín más de aire */
+  max-width:480px; /* asegura que no se pase */
   box-shadow:0 0 30px rgba(0,0,0,.6);
+  line-height:1.45; /* lectura más agradable */
 }
 .hero-card h3{color:var(--amber);margin-top:0;}
 .hero-card ul{padding-left:18px;line-height:1.5;margin:0;}
