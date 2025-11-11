@@ -20,14 +20,30 @@ html,body{
 }
 
 /* ===== NAV ===== */
+/* NAV COMPACTA */
 .nav{
   position:sticky;top:0;z-index:1000;
   display:flex;justify-content:space-between;align-items:center;
-  padding:12px 24px;
-  background:rgba(255,60,0,.22);
-  border-bottom:2px solid rgba(255,60,0,.75);
-  backdrop-filter:blur(6px);
+  padding:6px 16px;           /* ← reducido */
+  height:58px;                /* ← altura fija */
+  background:rgba(255,60,0,.18);
+  border-bottom:2px solid rgba(255,60,0,.7);
+  backdrop-filter:blur(4px);
 }
+
+/* Logo más pequeño y equilibrado */
+.logo-glow{
+  width:32px;
+  height:32px;
+  filter:drop-shadow(0 0 6px rgba(255,60,0,.65));
+}
+
+/* Texto más compacto */
+.nav__links a{
+  font-size:15px;
+  margin:0 6px;
+}
+
 .nav__left{display:flex;align-items:center;gap:10px;}
 .logo-glow{
   width:40px;height:40px;object-fit:contain;
