@@ -19,15 +19,14 @@ html,body{
   color:var(--text);
   font-family:Inter,system-ui,sans-serif;
 
-  /* Fondo correcto con ruta absoluta */
   background:
-     url("/tierra-de-nadie-dayz/assets/img/fondo-tdn.png") center center / cover no-repeat fixed,
-     radial-gradient(circle at center, #111 0%, #000 100%);
+     linear-gradient(0deg, rgba(0,0,0,.55), rgba(0,0,0,.35)),
+     url("/tierra-de-nadie-dayz/assets/img/fondo-tdn.png") center center / cover no-repeat fixed;
 }
 
 /* ===== NAV ===== */
 .nav{
-  position:sticky;top:0;z-index:10;
+  position:sticky;top:0;z-index:20;
   display:flex;justify-content:space-between;align-items:center;
   gap:12px;padding:12px 20px;
   background:rgba(0,0,0,.35);
@@ -37,23 +36,44 @@ html,body{
 .nav .logo{width:36px;height:36px;object-fit:contain;filter:drop-shadow(0 4px 12px var(--shadow));border-radius:8px}
 .nav__links a{margin:0 8px;text-decoration:none;color:var(--link);font-weight:600}
 
-/* ===== HERO A PANTALLA COMPLETA ===== */
+/* ===== HERO ===== */
 .hero{
+  position:relative;
+  width:100%;
   height:100vh;
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  align-items:center;
-  gap:40px;
-  max-width:1200px;
-  margin:0 auto;
-  padding-top:80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:120px;
+  z-index:5;
+}
+
+/* LOGO CENTRAL GIGANTE */
+.hero::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:700px;
+  height:700px;
+  background:url("/tierra-de-nadie-dayz/assets/img/logo.png") center/contain no-repeat;
+  opacity:1;
+  pointer-events:none;
+  z-index:1;
+}
+
+/* Asegura que el texto esté al frente */
+.hero *{
+  position:relative;
+  z-index:5;
 }
 
 .hero__text h1{
   font-family:Rajdhani,Inter,sans-serif;
   font-size:64px;
-  margin:0 0 12px;
-  text-shadow:0 0 12px rgba(0,0,0,.5);
+  margin:0 0 14px;
+  text-shadow:0 0 12px rgba(0,0,0,.65);
 }
 
 .hero__text p{
@@ -79,7 +99,12 @@ code#server-addr{font-family:ui-monospace;padding:2px 6px;background:#0b120f;bor
 .btn--primary{background:rgba(154,255,90,.15)}
 .btn--ghost{background:transparent;border-color:#26362c;color:var(--accent-amber)}
 
-/* ===== TARJETA INFO ===== */
+/* Quitar botón Steam */
+a[href*="steam"]{
+  display:none !important;
+}
+
+/* ===== TARJETA HERO DERECHA ===== */
 .hero__card{
   background:rgba(0,0,0,.55);
   border:1px solid #1b241f;
@@ -90,17 +115,17 @@ code#server-addr{font-family:ui-monospace;padding:2px 6px;background:#0b120f;bor
 }
 .hero__motto{font-weight:700;color:var(--accent-amber);margin-top:0}
 
-/* ===== SECCIONES (NOTICIAS + TIENDA) ===== */
+/* ===== WIDGETS DERECHA (NOTICIAS + TIENDA) ===== */
 .widgets{
   position:absolute;
   top:50%;
-  right:60px;
+  right:80px;
   transform:translateY(-50%);
   display:flex;
   flex-direction:column;
-  gap:20px;
-  width:330px;
-  z-index:5;
+  gap:22px;
+  width:350px;
+  z-index:10;
 }
 
 .widget{
@@ -121,7 +146,18 @@ code#server-addr{font-family:ui-monospace;padding:2px 6px;background:#0b120f;bor
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 880px){
-  .hero{grid-template-columns:1fr;text-align:center;height:auto;padding:100px 20px}
-  .widgets{grid-template-columns:1fr;margin-top:80px}
+@media (max-width: 980px){
+  .hero{
+    padding-left:20px;
+    padding-right:20px;
+    text-align:center;
+    height:auto;
+  }
+  .hero::before{opacity:.25;width:480px;height:480px;}
+  .widgets{
+    position:static;
+    transform:none;
+    width:100%;
+    margin-top:40px;
+  }
 }
