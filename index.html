@@ -1,40 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Tierra de Nadie DayZ</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tierra de Nadie | DayZ</title>
+<meta name="description" content="Servidor español de DayZ — Tierra de Nadie. Eventos, tienda, noticias y comunidad." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css" />
+<script defer src="assets/js/main.js"></script>
 
-  <header class="hero">
-    <img src="logo.png" alt="Tierra de Nadie" class="logo">
-    <h1 class="title">TIERRA DE NADIE</h1>
-    <p class="subtitle">“Aquí no sobrevives... Aquí resistes.”</p>
+  </head>
+  <body>
+    <header class="nav">
+  <div class="nav__left">
+    <img class="logo" src="assets/img/logo.png" alt="Tierra de Nadie logo" />
+    <span class="brand">Tierra de Nadie</span>
+  </div>
+  <nav class="nav__links">
+    <a href="index.html">Inicio</a>
+    <a href="news.html">Noticias</a>
+    <a href="shop.html">Tienda</a>
+    <a href="gallery.html">Galería</a>
+    <a href="staff.html">Staff & Contacto</a>
+    <a class="btn btn--discord" href="https://discord.com/servers/tierra-de-nadie-1095673299515748462" target="_blank" rel="noopener">Discord</a>
+  </nav>
+</header>
 
-    <a class="connect-button" href="steam://connect/5.9.151.150:2402">
-      Conectar al servidor
-    </a>
-  </header>
+    <main class="container">
+      <section class="hero">
+        <div class="hero__text">
+          <h1>Sobrevive. Caza. Domina.</h1>
+          <p>Bienvenido a <strong>Tierra de Nadie</strong>, un servidor de DayZ con estética <em>STALKER</em>, economía personalizada, eventos y una comunidad que nunca duerme.</p>
+          <div class="connect">
+            <div class="connect__ip">
+              <span class="label">Conectar</span>
+              <code id="server-addr">5.9.151.150:2402</code>
+              <button class="btn btn--copy" data-copy="#server-addr">Copiar IP</button>
+            </div>
+            <a class="btn btn--primary" href="steam://connect/5.9.151.150:2402">Abrir en Steam</a>
+          </div>
+        </div>
+        <div class="hero__card">
+          <h3 class="hero__motto">"Donde la última bala cuenta y la niebla nunca olvida."</h3>
+          <ul class="hero__features">
+            <li>Eventos semanales y recompensas únicas</li>
+            <li>Traders, economía y misiones personalizadas</li>
+            <li>Zonas PVE peligrosas y PVP libre</li>
+          </ul>
+        </div>
+      </section>
 
-  <section class="info">
-    <h2>Servidor DayZ en España</h2>
-    <p>
-      Supervivencia, territorio, lealtades y fuego.  
-      Aquí cada historia se escribe con pasos pesados,  
-      y cada decisión tiene un precio.
-    </p>
+      <section class="widgets">
+        <article class="widget">
+          <h2>Noticias</h2>
+          <p>Parcheos, eventos y comunicados de la administración.</p>
+          <a class="btn btn--ghost" href="news.html">Ver noticias</a>
+        </article>
 
-    <div class="buttons">
-      <a href="https://discord.gg/" target="_blank" class="btn">Discord</a>
-      <a href="#" class="btn">Normas</a>
-      <a href="#" class="btn">Tienda / Donaciones</a>
-    </div>
-  </section>
+        <article class="widget">
+          <h2>Tienda</h2>
+          <p>Apoya el servidor y desbloquea paquetes especiales.</p>
+          <a class="btn btn--ghost" href="shop.html">Ir a la tienda</a>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+  <p>© 2025 Tierra de Nadie — Comunidad DayZ. No afiliado a Bohemia Interactive.</p>
+</footer>
 
-  <footer>
-    <p>Tierra de Nadie DayZ — Comunidad Española</p>
-  </footer>
+  </body>
+</html>
 
 </body>
 </html>
+
