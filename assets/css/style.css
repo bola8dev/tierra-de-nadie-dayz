@@ -136,3 +136,23 @@ code#server-addr{
   .hero{grid-template-columns:1fr}
   .widgets,.cards,.shop-grid,.gallery,.staff{grid-template-columns:1fr}
 }
+/* Empujar las secciones inferiores hacia abajo para dejar ver el logo */
+.widgets,
+.cards,
+.shop-grid,
+.gallery,
+.staff,
+.footer {
+  position: relative;
+  z-index: 3; /* que estén encima de la niebla */
+}
+
+/* Secciones principales debajo del hero */
+.widgets {
+  margin-top: 240px; /* Ajusta este valor para subir/bajar */
+}
+
+/* Si en tu versión estas secciones no se llaman .widgets, usa esto como seguro */
+section, .widget, .card {
+  z-index: 3;
+}
