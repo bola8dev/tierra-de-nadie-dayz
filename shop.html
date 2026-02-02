@@ -3,24 +3,62 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apoya Tierra de Nadie</title>
 
-  <!-- CAMBIA SOLO ESTO POR TU CLIENT ID REAL -->
+  <title>Tierra de Nadie | Donaciones</title>
+  <meta name="description" content="Apoya el servidor Tierra de Nadie de forma voluntaria." />
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- TU CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- PAYPAL SDK (CAMBIA SOLO EL CLIENT ID) -->
   <script src="https://www.paypal.com/sdk/js?client-id=PEGA_AQUI_TU_CLIENT_ID&components=hosted-buttons&currency=EUR"></script>
+
+  <!-- TU JS -->
+  <script defer src="assets/js/main.js"></script>
 </head>
 
-<body style="background:#111;color:white;text-align:center;font-family:Arial;padding-top:80px">
+<body>
 
+<header class="nav">
+  <div class="nav__left">
+    <img class="logo" src="assets/img/logo.png" alt="Tierra de Nadie logo" />
+    <span class="brand">Tierra de Nadie</span>
+  </div>
+  <nav class="nav__links">
+    <a href="index.html">Inicio</a>
+    <a href="news.html">Noticias</a>
+    <a href="shop.html">Donaciones</a>
+    <a href="gallery.html">Galería</a>
+    <a href="staff.html">Staff & Contacto</a>
+    <a class="btn btn--discord" href="https://discord.com/servers/tierra-de-nadie-1095673299515748462" target="_blank" rel="noopener">Discord</a>
+  </nav>
+</header>
+
+<main class="container">
   <h1>Apoya Tierra de Nadie</h1>
-  <p>Contribución voluntaria para mantener el servidor</p>
+  <p>Contribución voluntaria para ayudar a mantener el servidor y la comunidad.</p>
 
-  <!-- TU BOTON -->
-  <div id="paypal-container-BLAJSUFXKAAAC"></div>
+  <!-- BOTON REAL PAYPAL -->
+  <div id="paypal-container-BLAJSUFXKAAAC" style="margin:40px 0;"></div>
   <script>
     paypal.HostedButtons({
       hostedButtonId: "BLAJSUFXKAAAC"
     }).render("#paypal-container-BLAJSUFXKAAAC");
   </script>
+
+  <div class="note">
+    <p><strong>Nota:</strong> Contribución voluntaria sin obligación. No afiliado a Bohemia Interactive.</p>
+  </div>
+</main>
+
+<footer class="footer">
+  <p>© 2025 Tierra de Nadie — Comunidad DayZ</p>
+</footer>
 
 </body>
 </html>
