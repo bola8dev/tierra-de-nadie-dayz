@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donar</title>
+
+  <!-- PAYPAL SDK - TU CLIENT ID REAL -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAA869CzvlTmFdC2r3LaM4xh1lXwy9YKdrA5b1z0z3m1CId1r1TTyah0UrTUZlZ08WvJJqOlnGU-Xc72A&components=hosted-buttons&disable-funding=venmo&currency=EUR">
+  </script>
+
+  <style>
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Arial, sans-serif;
+      background:#0f0f0f;
+      color:#fff;
+      padding:24px;
+      text-align:center;
+    }
+    .box{
+      width:min(420px, 100%);
+      background:#151515;
+      border:1px solid #2a2a2a;
+      border-radius:14px;
+      padding:22px;
+    }
+    h1{ margin:0 0 10px 0; font-size:24px; }
+    p{ margin:0 0 18px 0; opacity:.85; }
+    #paypal-container-KGTFNWLKFN5DW{ min-height:120px; }
+    .small{ margin-top:14px; font-size:12px; opacity:.7; }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Apoya Tierra de Nadie</h1>
+    <p>Contribución voluntaria para mantener el servidor.</p>
+
+    <!-- BOTÓN REAL -->
+    <div id="paypal-container-KGTFNWLKFN5DW"></div>
+
+    <script>
+      if (typeof paypal === "undefined") {
+        document.getElementById("paypal-container-KGTFNWLKFN5DW").innerHTML =
+          "<div style='padding:12px;border:1px solid #ff3b00;border-radius:10px;color:#ff3b00'>" +
+          "PayPal no se cargó. Revisa AdBlock o el Client ID." +
+          "</div>";
+      } else {
+        paypal.HostedButtons({
+          hostedButtonId: "KGTFNWLKFN5DW"
+        }).render("#paypal-container-KGTFNWLKFN5DW");
+      }
+    </script>
+
+    <div class="small">Pago con tarjeta o PayPal.</div>
+  </div>
+</body>
+</html>
