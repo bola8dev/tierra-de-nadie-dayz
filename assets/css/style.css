@@ -217,3 +217,23 @@ body::after{
   .hero-logo{max-width:300px;margin-bottom:6px;}
   .hero-center{margin-top:0;}
 }
+/* Asegura que la niebla quede DETRÁS del contenido */
+body { position: relative; }
+
+body::after{
+  z-index: 0;          /* la niebla atrás */
+}
+
+/* Pon todo el contenido por encima */
+.nav, main, .container, .footer{
+  position: relative;
+  z-index: 1;
+}
+
+/* Y el botón aún más arriba por si acaso */
+#paypal-container-BLAJSUFXKAAAC{
+  position: relative;
+  z-index: 9999;
+  min-height: 120px;   /* evita que quede “colapsado” */
+}
+
